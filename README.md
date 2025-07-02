@@ -141,145 +141,24 @@ AI_Production/
 
 ## 📚 API Documentation
 
-### Stock Prediction Endpoints
-```http
-POST /api/predict
-GET /api/stocks
-GET /api/history/:symbol
-GET /api/technical/:symbol
-```
+### Stock Prediction
+- `POST /api/predict` - Predict stock prices
+- `GET /api/stocks` - Get available stocks
+- `GET /api/history/:symbol` - Get historical data
 
-### Chatbot Endpoints
-```http
-POST /api/chat
-GET /api/chat/history
-DELETE /api/chat/history
-```
+### Chatbot
+- `POST /api/chat` - Send message to chatbot
+- `GET /api/chat/history` - Get chat history
 
-### Portfolio Endpoints
-```http
-POST /api/portfolio
-GET /api/portfolio/:id
-PUT /api/portfolio/:id
-DELETE /api/portfolio/:id
-```
+### Task Prioritizer
+- `POST /api/tasks` - Create new task
+- `GET /api/tasks` - Get prioritized tasks
+- `PUT /api/tasks/:id` - Update task
 
-### Task Management Endpoints
-```http
-POST /api/tasks
-GET /api/tasks
-PUT /api/tasks/:id
-DELETE /api/tasks/:id
-```
+## Technologies Used
 
-## 🔧 Configuration
-
-### Environment Variables
-
-Create `.env` files in each service directory:
-
-**Backend (.env)**
-```env
-PORT=5000
-NODE_ENV=development
-CORS_ORIGIN=http://localhost:3000
-```
-
-**AI Services (.env)**
-```env
-FLASK_ENV=development
-FLASK_PORT=8000
-API_KEY=your_api_key_here
-```
-
-## 🧪 Testing
-
-### Backend Tests
-```bash
-cd backend
-npm test
-```
-
-### Frontend Tests
-```bash
-cd frontend
-npm test
-```
-
-### AI Services Tests
-```bash
-cd ai-services
-python -m pytest
-```
-
-## 📦 Deployment
-
-### Production Build
-```bash
-# Build production images
-docker-compose -f docker-compose.prod.yml build
-
-# Deploy to production
-docker-compose -f docker-compose.prod.yml up -d
-```
-
-### Environment-Specific Configurations
-- `docker-compose.yml` - Development environment
-- `docker-compose.prod.yml` - Production environment
-- `docker-compose.test.yml` - Testing environment
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit your changes**
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-4. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open a Pull Request**
-
-### Development Guidelines
-- Follow the existing code style
-- Add tests for new features
-- Update documentation as needed
-- Ensure all tests pass before submitting
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Financial Data**: Yahoo Finance API
-- **News Data**: NewsAPI
-- **Economic Data**: FRED API
-- **UI Components**: Lucide React Icons
-- **Charts**: Recharts Library
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ai-production/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ai-production/discussions)
-- **Email**: support@ai-production.com
-
-## 🔮 Roadmap
-
-- [ ] **Advanced ML Models** - LSTM, Transformer-based predictions
-- [ ] **Real-time Trading** - Automated trading strategies
-- [ ] **Mobile App** - React Native application
-- [ ] **Advanced Analytics** - Portfolio optimization algorithms
-- [ ] **API Marketplace** - Third-party integrations
-- [ ] **Blockchain Integration** - DeFi analytics
-
----
-
-**Made with ❤️ by the AI Production Team**
+- **Frontend**: React, Tailwind CSS, Axios
+- **Backend**: Node.js, Express, Socket.io
+- **AI Services**: Python, pandas, scikit-learn, TensorFlow
+- **Database**: MongoDB (optional)
+- **Containerization**: Docker, Docker Compose 

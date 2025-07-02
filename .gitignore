@@ -32,11 +32,9 @@ MANIFEST
 venv/
 env/
 ENV/
+env.bak/
+venv.bak/
 .venv/
-.env/
-.ENV/
-*/venv/
-*/env/
 
 # Environment variables
 .env
@@ -44,7 +42,6 @@ ENV/
 .env.development.local
 .env.test.local
 .env.production.local
-*.env
 
 # IDE
 .vscode/
@@ -133,36 +130,43 @@ temp/
 # Docker
 .dockerignore
 
-# AI Services specific
-ai-services/data/*.json
-ai-services/models/*.pkl
-ai-services/venv/
-
-# Sample data (keep structure but ignore actual data files)
-ai-services/data/economic/*.json
-ai-services/data/news/*.json
-ai-services/data/stocks/*.json
-ai-services/data/sentiment/*.json
-
-# Keep data directory structure
-!ai-services/data/economic/.gitkeep
-!ai-services/data/news/.gitkeep
-!ai-services/data/stocks/.gitkeep
-!ai-services/data/sentiment/.gitkeep
-!ai-services/data/prompts/.gitkeep
-
-# Frontend build
-frontend/build/
-frontend/dist/
-
-# Backend
-backend/node_modules/
-backend/.env
-
 # Database
 *.db
 *.sqlite
 *.sqlite3
+
+# ML Models
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+models/saved_models/
+
+# Data files
+data/raw/
+data/processed/
+*.csv
+*.json
+*.xlsx
+*.xls
+
+# API Keys and Secrets
+secrets/
+keys/
+*.key
+*.pem
+
+# Build outputs
+build/
+dist/
+out/
+
+# Test outputs
+test-results/
+coverage/
+
+# Documentation build
+docs/_build/
 
 # Jupyter Notebook
 .ipynb_checkpoints
