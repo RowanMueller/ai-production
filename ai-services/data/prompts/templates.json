@@ -1,0 +1,68 @@
+{
+  "stock_analysis": {
+    "context": "You are a financial analyst assistant. Use the following data to provide insights:",
+    "data_sources": [
+      "stock_data",
+      "news_data",
+      "market_data",
+      "economic_data"
+    ],
+    "prompt_template": "\nBased on the following data for {symbol}:\n\n**Stock Data:**\n- Current Price: ${current_price}\n- 52-Week Range: ${low_52wk} - ${high_52wk}\n- Market Cap: ${market_cap}\n- P/E Ratio: {pe_ratio}\n\n**Technical Indicators:**\n- RSI: {rsi}\n- MACD: {macd}\n- Moving Averages: {ma_status}\n\n**Market Context:**\n- S&P 500: {sp500_change}%\n- Market Volatility (VIX): {vix_value}\n\n**Economic Indicators:**\n- Interest Rate: {interest_rate}%\n- Inflation Rate: {inflation_rate}%\n\nProvide a comprehensive analysis including:\n1. Technical analysis\n2. Fundamental analysis\n3. Risk assessment\n4. Investment recommendation\n",
+    "variables": [
+      "symbol",
+      "current_price",
+      "low_52wk",
+      "high_52wk",
+      "market_cap",
+      "pe_ratio",
+      "rsi",
+      "macd",
+      "ma_status",
+      "sp500_change",
+      "vix_value",
+      "interest_rate",
+      "inflation_rate"
+    ]
+  },
+  "prediction_prompt": {
+    "context": "You are an AI stock prediction model. Analyze the following data:",
+    "data_sources": [
+      "historical_data",
+      "technical_indicators",
+      "sentiment_data"
+    ],
+    "prompt_template": "\nGiven the following data for {symbol}:\n\n**Historical Performance:**\n- 30-day return: {return_30d}%\n- 90-day return: {return_90d}%\n- Volatility: {volatility}%\n\n**Technical Indicators:**\n- RSI: {rsi}\n- MACD: {macd}\n- Moving Averages: {ma_status}\n\n**Market Sentiment:**\n- News Sentiment: {news_sentiment}\n- Analyst Recommendations: {analyst_recs}\n\n**Market Conditions:**\n- Sector Performance: {sector_performance}%\n- Market Trend: {market_trend}\n\nPredict the stock price for the next 7 days with confidence level and reasoning.\n",
+    "variables": [
+      "symbol",
+      "return_30d",
+      "return_90d",
+      "volatility",
+      "rsi",
+      "macd",
+      "ma_status",
+      "news_sentiment",
+      "analyst_recs",
+      "sector_performance",
+      "market_trend"
+    ]
+  },
+  "sentiment_analysis": {
+    "context": "You are a market sentiment analyst. Analyze the following news and social media data:",
+    "data_sources": [
+      "news_data",
+      "social_media",
+      "analyst_reports"
+    ],
+    "prompt_template": "\nAnalyze the sentiment for {symbol} based on:\n\n**Recent News Articles ({news_count} articles):**\n{news_summary}\n\n**Social Media Mentions:**\n- Twitter Sentiment: {twitter_sentiment}\n- Reddit Sentiment: {reddit_sentiment}\n\n**Analyst Coverage:**\n- Buy Recommendations: {buy_count}\n- Hold Recommendations: {hold_count}\n- Sell Recommendations: {sell_count}\n\nProvide a sentiment score (1-10) and detailed analysis of market sentiment.\n",
+    "variables": [
+      "symbol",
+      "news_count",
+      "news_summary",
+      "twitter_sentiment",
+      "reddit_sentiment",
+      "buy_count",
+      "hold_count",
+      "sell_count"
+    ]
+  }
+}

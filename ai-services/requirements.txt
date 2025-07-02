@@ -1,0 +1,37 @@
+flask==3.0.0
+flask-cors==4.0.0
+pandas==2.2.0
+numpy==1.26.4
+yfinance==0.2.36
+scikit-learn==1.4.0
+matplotlib==3.8.2
+plotly==5.17.0
+requests==2.31.0
+python-dotenv==1.0.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+nltk==3.8.1
+scipy==1.12.0
+gunicorn==21.2.0
+
+# Data Science and ML
+keras==2.15.0
+
+# Financial Data
+yfinance>=0.2.18
+requests>=2.31.0
+
+# Text Processing
+vaderSentiment>=3.3.2
+
+# Technical Analysis
+pandas-ta>=0.3.14b0
+
+# News and Sentiment
+newsapi-python>=0.2.6
+
+# Economic Data
+fredapi>=0.5.1
+
+# Data Processing
+python-dateutil>=2.8.2 

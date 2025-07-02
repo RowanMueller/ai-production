@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Frontend React App
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://backend:5001/api
+      - REACT_APP_AI_SERVICE_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - ai-network
+
+  # Backend Node.js API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - AI_SERVICE_URL=http://ai-services:8000
+      - PORT=5001
+    depends_on:
+      - ai-services
+    networks:
+      - ai-network
+
+  # Python AI Services
+  ai-services:
+    build:
+      context: ./ai-services
+      dockerfile: Dockerfile
+    ports:
+      - "5002:8000"
+    volumes:
+      - ./ai-services:/app
+      - ./ai-services/data:/app/data
+    environment:
+      - PYTHONPATH=/app
+      - FLASK_ENV=production
+    networks:
+      - ai-network
+
+networks:
+  ai-network:
+    driver: bridge
+
+volumes:
+  node_modules:
+  data: 
